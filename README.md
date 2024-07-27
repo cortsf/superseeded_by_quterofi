@@ -1,5 +1,5 @@
 # Qutesearch (and qutechange)
-These two scripts are roughly the equivalent of `quterofi/switch_engine`. You need qutesearch [(cortsf/qutesearch)](https://github.com/cortsf/qutesearch) available on `$PATH` to use them.
+These two scripts are roughly the equivalent of `quterofi/switch_engine`. You need qutesearch ([cortsf/qutesearch](https://github.com/cortsf/qutesearch)) available on `$PATH` to use them.
 
 For qutesearch (the program, not the script) to be able to read search engines from your `config.py`, all your engines must be declared like this (just copy the line and replace the alias and url), at the end of the file IIRC. You also have to provide a valid `/home/<user>/..` path on each of these scripts. 
 
