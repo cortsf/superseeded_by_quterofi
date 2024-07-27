@@ -1,3 +1,22 @@
+# Github repos (search engines and quickmarks)
+- Replace `path/to/set_gh_quickmark.sh` if you want `gh.alias` quickmarks.
+- RESTART AFTER SOURCING ANY CHANGES ON 'github_repos'.
+
+``` python
+import subprocess
+
+github_repos=[ # (user, repo, alias)
+      ("junegunn", "fzf", "fzf")
+    , ("torvalds", "linux", "lnx")
+]
+
+for (user, repo, alias) in github_repos:
+    c.url.searchengines["gh." + alias] = "https://github.com/search?q=repo%3A" + user + "%2F" + repo + "+{}&type=issues"
+    c.url.searchengines["ghi." + alias] = "https://github.com/" + user + "/" + repo + "/issues?q=is%3Aissue+{}"
+    c.url.searchengines["ghp." + alias] = "https://github.com/" + user + "/" + repo + "/pulls?q=is%3Aissue+{}"
+    subprocess.call("path/to/set_gh_quickmark.sh " + user + " " + " " + repo + " " +alias, shell=True)
+```
+
 # Rofi-open
 This is a basic bash-only (no extra deps) version of quterofi/open. 
 
