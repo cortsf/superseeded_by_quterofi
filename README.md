@@ -1,5 +1,5 @@
 # Github repos (search engines and quickmarks)
-- Replace `path/to/set_gh_quickmark.sh` if you want `gh.alias` quickmarks.
+- Replace `path/to/set_gh_quickmark.sh` if you want `gh.alias` quickmarks. This (bash) script should be rewriten in python but I don't use this stuff anymore and I won't do it.
 - RESTART AFTER SOURCING ANY CHANGES ON 'github_repos'.
 
 ``` python
