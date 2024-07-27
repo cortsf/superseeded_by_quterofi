@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+call="$(qutesearch "/home/<user>/.config/qutebrowser/config.py" "$QUTE_URL")"
+engine="$(echo "$call" | head -1)"
+search_string="$(echo "$call" | tail -1)"
+echo "cmd-set-text :open $engine $search_string" >> "$QUTE_FIFO"

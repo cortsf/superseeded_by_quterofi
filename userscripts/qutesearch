@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# USAGE: qutesearch (t|o) [<new_engine>]
+
+if [[ "$#" == 1 ]]; then
+    new_engine="$(dmenu -nb '#080' -nf '#fff')";
+elif [[ "$#" == 2 ]]; then
+    new_engine="$2";
+else
+    exit 1
+fi
+
+
+if [ "$new_engine" != "" ]; then
+  new_url="$(qutesearch "/home/<user>/.config/qutebrowser/config.py" "$QUTE_URL" "$new_engine")"
+  if [[ "$1" == "o" ]]; then
+      echo "open $new_url"  >> "$QUTE_FIFO"
+  elif [[ "$1" == "t" ]]; then
+      echo "open -t $new_url"  >> "$QUTE_FIFO"
+  fi
+fi
